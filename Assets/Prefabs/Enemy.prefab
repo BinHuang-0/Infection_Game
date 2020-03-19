@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2780349701702095845}
   - component: {fileID: 194443476511530730}
   - component: {fileID: 114923889976438538}
-  - component: {fileID: 114575298269071710}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Infected
@@ -123,16 +122,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
---- !u!114 &114575298269071710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1906508073942901220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e608e3e7f95bf7469cdc4585eaa093f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemy: {fileID: 1906508073942901220}

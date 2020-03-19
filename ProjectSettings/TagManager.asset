@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Uninfected
   - Infected
+  - Coin
   layers:
   - Default
   - TransparentFX
