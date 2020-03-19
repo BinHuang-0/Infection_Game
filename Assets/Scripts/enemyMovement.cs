@@ -6,16 +6,16 @@ public class enemyMovement : MonoBehaviour
 {
     public float speed;
     GameObject[] uninfected;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    Transform closest;
 
     // Update is called once per frame
     void Update()
     {
         uninfected = GameObject.FindGameObjectsWithTag("Uninfected");
-        enemyMove(findClosestUninfected());
+        closest = findClosestUninfected();
+        if(closest != null) {
+            enemyMove(closest);
+        }
     }
 
     public void enemyMove(Transform player) {
@@ -28,14 +28,16 @@ public class enemyMovement : MonoBehaviour
         float distanceToclosestUninfected = Mathf.Infinity;
         GameObject closestUninfected = null;
 
-        foreach(GameObject u in uninfected) {
-            float distanceToUninfected = (u.transform.position - this.transform.position).sqrMagnitude;
-            if(distanceToUninfected < distanceToclosestUninfected) {
-                distanceToclosestUninfected = distanceToUninfected;
-                closestUninfected = u;
+        if(uninfected.Length != 0) {
+            foreach(GameObject u in uninfected) {
+                float distanceToUninfected = (u.transform.position - this.transform.position).sqrMagnitude;
+                if(distanceToUninfected < distanceToclosestUninfected) {
+                    distanceToclosestUninfected = distanceToUninfected;
+                    closestUninfected = u;
+                }
             }
+            return closestUninfected.transform;
         }
-
-        return closestUninfected.transform;
+        return null;
     }
 }
